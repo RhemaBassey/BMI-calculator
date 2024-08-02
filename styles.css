@@ -14,7 +14,7 @@ h1{
     padding-top: 40px;
 }
 
-.container{
+.container form{
     padding-top: 40px;
     display: flex;
     flex-direction: column;

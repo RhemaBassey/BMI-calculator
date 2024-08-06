@@ -6,23 +6,50 @@
 
 body{
     background-color:darkslategrey;
-    color: azure;
+
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h1{
-    padding-top: 40px;
+    padding-top: 50px;
+    color: azure;
 }
 
+h2 {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+label{
+    padding:30px;
+}
 .container form{
-    padding-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: 50vh;
 }
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin: 60px auto;
+    max-width: 300px;
+    text-align: center;
+}
 
-button{
-    margin-top: 40px;
+.card h2 {
+    margin-top: 0;
+}
+
+.card p {
+    color: #666;
+}
+
+.field{
+    display: flex;
+    align-items: center;
+    margin-left: -24px;
 }

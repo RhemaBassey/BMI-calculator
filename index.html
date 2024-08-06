@@ -8,26 +8,30 @@
   </head>
   <body>
     <h1>BMI CALCULATOR</h1>
-    <div class="container">
+    <div class="container card">
       <form id="BMIdata">
         <h2 id="score">...</h2>
-        <label for="weightInput">Weight: </label>
+<div class="field"><label for="weightInput">Weight: </label>
         <input
-          type="text"
+          type="number"
           placeholder="Enter your weight (kg)"
           id="weightInput"
           name="weight"
           required
-        />
-        <hr width="230px" style="margin: 20px 0px" />
-        <label for="heightInput">Height: </label>
+        /></div>
+<div class="field"><label for="heightInput">Height: </label>
         <input
-          type="text"
+          type="number"
           placeholder="Enter your height (m)"
           id="heightInput"
+          step="0.01" 
           name="height"
           required
-        />
+        /></div>
+        
+
+        
+<hr width="230px" style="margin: 20px 0px" />
         <button type="submit">Calculate</button>
       </form>
     </div>

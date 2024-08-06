@@ -8,10 +8,24 @@ document.addEventListener("DOMContentLoaded", function () {
       var height = parseFloat(document.getElementById('heightInput').value);
 
       var BMI = weight / height ** 2;
+           var BMIrange = [0, 18.5, 25, 30, 35, 40]
+	var BMIcategory = ["Underweight","Normal weight","Overweight","Moderate Obesity","Severe Obesity","Morbid Obesity"]
+	
+	var category = ""
+      for (var i=0; i<BMIrange.length; i++){
+	
+            if (parseFloat(BMI.toFixed(2))< BMIrange[i]){
+			break;
+	}
+		    category = BMIcategory[i];
+
+
+}
+      
 
       const scoreDisplay = document.getElementById("score");
 
-      scoreDisplay.textContent = `Your BMI is ${BMI.toFixed(2)}`;
+      scoreDisplay.textContent = `Your BMI is ${BMI.toFixed(2)} (${category})`;
 
   
     });

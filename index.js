@@ -8,16 +8,15 @@ document.addEventListener("DOMContentLoaded", function () {
       var height = parseFloat(document.getElementById('heightInput').value);
 
       var BMI = weight / height ** 2;
-           var BMIrange = [0, 18.5, 25, 30, 35, 40]
-	var BMIcategory = ["Underweight","Normal weight","Overweight","Moderate Obesity","Severe Obesity","Morbid Obesity"]
+           var BMIrange = {"0.0":"Underweight", "18.5":"Normal weight", "25.0":"Overweight", "30.0":"Moderate Obesity", "35.0":"Severe Obesity", "40.0":"Morbid Obesity"}
 	
 	var category = ""
-      for (var i=0; i<BMIrange.length; i++){
-	
-            if (parseFloat(BMI.toFixed(2))< BMIrange[i]){
+      for (keyWeight in BMIrange){
+	console.log(keyWeight)
+            if (parseFloat(BMI.toFixed(2))< keyWeight){
 			break;
 	}
-		    category = BMIcategory[i];
+		    category = BMIrange[keyWeight];
 
 
 }

@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   var weightInput = document.getElementById("weightInput");
   var weightUnitDropdown = document.getElementById("weightUnit");
+
   var heightInput = document.getElementById("heightInput");
-  var heightInputAlt = document.getElementById("heightInputAlt")
+  var heightInputFt = document.getElementById("heightInputFt");
+  var heightInputIn = document.getElementById("heightInputIn");
+
 
   var heightUnitDropdown = document.getElementById("heightUnit");
 
@@ -15,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       var height = parseFloat(heightInput.value);
       var heightUnit = heightUnitDropdown.value;
-      var heightAlt = heightInputAlt.value
+      var heightAlt = heightInputAlt.value;
 
       //weightInput bar toggle
 
@@ -24,14 +27,12 @@ document.addEventListener("DOMContentLoaded", function () {
         weight *= 0.45359237;
       }
       if (heightUnit == "imperial") {
-
         
-        let separatorIndex = heightAlt.indexOf("|");
-        var feet = heightAlt.slice(0,separatorIndex);
-        var inches = heightAlt.slice(separatorIndex+1);
+        var feet = heightInputFt.value;
+        var inches = heightInputIn.value;
 
-        height = 0.3048*feet + 0.0254*inches;
 
+        height = 0.3048 * feet + 0.0254 * inches;
       }
       var BMI = weight / height ** 2;
       var BMIrange = {
@@ -54,34 +55,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const scoreDisplay = document.getElementById("score");
 
-      scoreDisplay.textContent = `Your BMI is ${BMI.toFixed(2)} (${category})`;
+      scoreDisplay.textContent = `Your BMI is ${BMI.toFixed(2)} \n(${category})`;
     });
 
   heightUnitDropdown.addEventListener("change", function () {
-
-
     if (this.value === "imperial") {
-      heightInput.style.display = "none"
-      heightInput.removeAttribute('required');
+      heightInput.style.display = "none";
+      heightInput.removeAttribute("required");
 
       heightInputAlt.style.display = "inline";
-      heightInputAlt.setAttribute('required', 'required')
+      heightInputFt.setAttribute("required", "required");
+      heightInputIn.setAttribute("required", "required");
 
     } else if (this.value === "metric") {
       heightInput.style.display = "inline";
-      heightInput.setAttribute('required', 'required')
+      heightInput.setAttribute("required", "required");
 
-      heightInputAlt.style.display = "none"
-      heightInputAlt.removeAttribute('required');
+      heightInputAlt.style.display = "none";
+      heightInputFt.removeAttribute("required");
+      heightInputIn.removeAttribute("required")
     }
   });
 
-   // Function to set the placeholder color
-   function updatePlaceholderColor() {
-    if (heightInputAlt.value === '') {
-      heightInputAlt.classList.add('placeholder');
+  // Function to set the placeholder color
+  function updatePlaceholderColor() {
+    if (heightInputFt.value === "") {
+      heightInputFt.classList.add("placeholder");
     } else {
-      heightInputAlt.classList.remove('placeholder');
+      heightInputFt.classList.remove("placeholder");
+    }
+    if (heightInputIn.value === "") {
+      heightInputIn.classList.add("placeholder");
+    } else {
+      heightInputIn.classList.remove("placeholder");
     }
   }
 

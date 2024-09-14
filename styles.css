@@ -6,10 +6,16 @@
 
 #heightInputAlt{
     display: none;
-    margin-left: 16px;
-    margin-right: 10px;
-    width: 188px;
-    height: 22px;
+    padding: 0;
+    margin: 0 16px;
+}
+
+
+#heightInputAlt select{
+    width: 70px;
+    height: 24px;
+    margin: 0 4px;
+   
 }
 
 body{
@@ -29,13 +35,15 @@ h2 {
 }
 
 input{
-    margin: 0 10px;
+    margin: 0 6px;
+    height: 20px;
+
 }
 
 
 
 .placeholder {
-    color: #888; /* Grayish color */
+    color: #7c7c7c; /* Grayish color */
 }
 
 
